@@ -12,7 +12,7 @@ Each agent builds on the last, fixing a specific known failure mode:
 
 | agent | fixes | key paper |
 |---|---|---|
-| `VanillaDQN` | baseline — unstable training, overestimation | Mnih et al., 2015 |
+| `VanillaDQN` | baseline: unstable training, overestimation | Mnih et al., 2015 |
 | `DoubleDQN` | overestimation bias in Q-value targets | van Hasselt et al., 2016 |
 | `DuelingDQN` | poor value estimation in irrelevant-action states | Wang et al., 2016 |
 | `DuelingDoubleDQN` | both of the above combined | Wang et al., 2016 |
