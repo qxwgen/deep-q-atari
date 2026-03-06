@@ -2,7 +2,7 @@
 
 **A progressive study of Deep Q-Learning on Atari — from vanilla DQN to state-of-the-art.**
 
-Most DQN repos train one agent on one game and call it done. This project does something more useful: it implements four DQN variants in a clean, comparable framework, trains them on the same environment, and measures exactly how much each improvement contributes. The result is less a "look what I built" project and more a small empirical study — the kind of thinking that matters in research.
+Most DQN repos train one agent on one game and call it done. This project does something more useful: it implements four DQN variants in a clean, comparable framework, trains them on the same environment, and measures exactly how much each improvement contributes. The result is less a "look what I built" project and more a small empirical study; the kind of thinking that matters in research.
 
 ---
 
@@ -124,7 +124,7 @@ pytest tests/ -v
 
 ## key design decisions
 
-**why stack 4 frames?** a single frame has no velocity information — the agent can't tell which direction the ball is moving. stacking 4 consecutive frames encodes motion implicitly without any recurrence.
+**why stack 4 frames?** a single frame has no velocity information; the agent can't tell which direction the ball is moving. stacking 4 consecutive frames encodes motion implicitly without any recurrence.
 
 **why dueling?** in many Atari states, the choice of action doesn't matter much (e.g. when the ball is far away in Pong). dueling networks learn V(s) and A(s,a) separately, so the value head trains even when the advantage signal is noisy.
 
