@@ -1,0 +1,14 @@
+# core
+torch>=2.0
+numpy>=1.24
+gymnasium>=0.29
+ale-py>=0.8
+opencv-python>=4.8    # for WarpFrame (grayscale + resize)
+
+# plotting
+matplotlib>=3.7
+pandas>=2.0
+
+# dev
+pytest>=7.4
+pyyaml>=6.0

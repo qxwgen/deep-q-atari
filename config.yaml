@@ -1,0 +1,39 @@
+# deep-q-atari — hyperparameter config
+# All defaults used by scripts/train.py
+
+environment:
+  env_id: PongNoFrameskip-v4
+  frame_stack: 4
+  frame_size: 84
+  clip_rewards: true
+  episode_life: true   # treat life loss as episode end during training
+
+training:
+  total_steps: 1_000_000
+  batch_size: 32
+  gamma: 0.99
+  lr: 0.0001
+  min_replay_size: 10_000
+  target_update: 1_000   # steps between hard target updates (0 = soft update)
+  tau: 0.001             # soft update coefficient (used only if target_update=0)
+  grad_clip: 10.0
+  log_every: 10          # episodes between console logs
+
+exploration:
+  eps_start: 1.0
+  eps_end: 0.01
+  eps_decay_steps: 500_000
+
+replay_buffer:
+  buffer_size: 100_000
+
+per:                     # Prioritized Experience Replay
+  alpha: 0.6             # priority exponent
+  beta: 0.4              # IS weight exponent (annealed to 1.0)
+  beta_inc: 0.000001
+  eps: 0.000001
+
+save:
+  save_dir: results
+  checkpoint_best: true
+  checkpoint_final: true
